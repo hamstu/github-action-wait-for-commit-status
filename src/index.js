@@ -9,9 +9,9 @@ async function run() {
 
   const commit = await octokit.repos.getCommit(github.context.sha);
 
-  console.log("commit", commit);
+  console.log(`commit ${github.context.sha}`, commit);
 
-  console.log("context", github.context);
+  console.log("github.context", github.context);
 }
 
 run();

@@ -9,7 +9,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "ncc build src/index.js --license licenses.txt"
+    "build": "ncc build src/index.js",
+    "publish": "npm run build && git add . && git commit -m 'update' && git publish"
   },
   "keywords": [],
   "author": "",

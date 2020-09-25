@@ -9,6 +9,7 @@ inputs:
     required: true
   timeout:
     description: 'The maximum amount of time to wait, in minutes'
+    default: '15'
 outputs:
   status:
     description: 'The status object'
