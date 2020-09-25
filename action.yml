@@ -7,8 +7,6 @@ inputs:
   status-context:
     description: 'The string (context) name of the commit status to wait on (e.g., jenkins/build)'
     required: true
-  wait-for-state:
-    description: 'The commit status state value to wait for (e.g., success)'
   timeout:
     description: 'The maximum amount of time to wait, in minutes'
 outputs:
