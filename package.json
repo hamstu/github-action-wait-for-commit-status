@@ -10,7 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "build": "ncc build src/index.js",
-    "publish": "npm run build && git add . && git commit -m \"$MSG\" && git push origin master"
+    "publish": "npm run build && git add . && git commit -m \"$M\" && git push origin master"
   },
   "keywords": [],
   "author": "",
