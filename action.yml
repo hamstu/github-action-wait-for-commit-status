@@ -1,0 +1,19 @@
+name: 'Wait for commit status'
+description: 'Wait until the given commit status matches the expected state before proceeding.'
+inputs:
+  github-token:
+    description: 'Github token for the workflow'
+    required: true
+  status-context:
+    description: 'The string (context) name of the commit status to wait on (e.g., jenkins/build)'
+    required: true
+  wait-for-state:
+    description: 'The commit status state value to wait for (e.g., success)'
+  timeout:
+    description: 'The maximum amount of time to wait, in minutes'
+outputs:
+  status:
+    description: 'The status object'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
