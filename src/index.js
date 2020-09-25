@@ -7,11 +7,15 @@ async function run() {
   const context = core.getInput("status-context");
   const timeout = core.getInput("timeout");
 
-  const commit = await octokit.repos.getCommit(github.context.sha);
+  const commit = await octokit.repos.getCommit({
+    owner: github.context.owner,
+    repo: github.context.repo,
+    sha: github.context.sha,
+  });
 
   console.log(`commit ${github.context.sha}`, commit);
 
-  console.log("github.context", github.context);
+  console.log("----------------------", "github.context", github.context);
 }
 
 run();
