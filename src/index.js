@@ -13,7 +13,7 @@ async function run() {
   //   sha: github.context.sha,
   // });
 
-  console.log(`commit ${github.context.sha}`, commit);
+  console.log(`commit ${github.context.sha}`);
 
   console.log("----------------------", "github.context", github.context);
 }
