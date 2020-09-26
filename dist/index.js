@@ -5787,14 +5787,21 @@ async function run() {
   const timeout = core.getInput("timeout");
 
   // const commit = await octokit.repos.getCommit({
-  //   owner: github.context.owner,
-  //   repo: github.context.repo,
+  //   owner: github.context.payload.repository.owner.login,
+  //   repo: github.context.payload.repository.name,
   //   sha: github.context.sha,
   // });
 
-  console.log(`commit ${github.context.sha}`);
+  // console.log(`commit ${github.context.sha}`);
 
-  console.log("----------------------", "github.context", github.context);
+  // console.log("----------------------", "github.context", github.context);
+  const statuses = await octokit.repos.listCommitStatusesForRef({
+    owner: github.context.payload.repository.owner.login,
+    repo: github.context.payload.repository.name,
+    ref: github.context.payload.head_commit.id,
+  });
+
+  console.log(statuses);
 }
 
 run();
